@@ -1,5 +1,6 @@
 pandas
 numpy
-pymongo
-
--e .
+scikit-learn
+catboost
+xgboost
+# -e .
