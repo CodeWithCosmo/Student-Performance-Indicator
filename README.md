@@ -16,11 +16,11 @@
 * ## **How to setup ?**
 1. ## Creating an environment
 ```
-conda create --name <env_name> python==3.8 -y
+conda create --prefix env/<env_name> python==3.8 -y
 ```
 2. ## Activateing the environment
 ```
-conda activate <env_name>
+conda activate env/<env_name>
 ```
 3. ## Installing the requirements
 ```

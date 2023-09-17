@@ -57,7 +57,7 @@ class DataTransformation:
             train_df = pd.read_csv(train_path)
             test_df = pd.read_csv(test_path)
 
-            lg.info('Train and test dataframes read completed')
+            lg.info('Train and test dataframes loaded successfully')
             lg.info('Obtaining preprocessor')
 
             preprocessor = self.get_data_transformer()
