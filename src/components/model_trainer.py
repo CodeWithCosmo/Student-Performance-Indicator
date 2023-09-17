@@ -31,18 +31,68 @@ class ModelTrainer:
 
 
             models = {
-                "linear_regression": LinearRegression(),
+                "decision_tree_regressor": DecisionTreeRegressor(),
                 "random_forest_regressor": RandomForestRegressor(),
+                "gradient_boosting_regressor": GradientBoostingRegressor(),
+                "linear_regressor": LinearRegression(),
                 "xgboost_regressor": XGBRegressor(),
                 "catboost_regressor": CatBoostRegressor(verbose=False),
-                "knn_regressor": KNeighborsRegressor(),
-                "decision_tree_regressor": DecisionTreeRegressor(),
                 "adaboost_regressor": AdaBoostRegressor(),
-                "gradient_boosting_regressor": GradientBoostingRegressor()
+                "knn_regressor": KNeighborsRegressor()
             }
 
+            params={
+                "decision_tree_regressor": {
+                    'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                    # 'splitter':['best','random'],
+                    # 'max_features':['sqrt','log2'],
+                },
+                "random_forest_regressor":{
+                    # 'criterion':['squared_error', 'friedman_mse', 'absolute_error', 'poisson'],
+                 
+                    # 'max_features':['sqrt','log2',None],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "gradient_boosting_regressor":{
+                    # 'loss':['squared_error', 'huber', 'absolute_error', 'quantile'],
+                    'learning_rate':[.1,.01,.05,.001],
+                    'subsample':[0.6,0.7,0.75,0.8,0.85,0.9],
+                    # 'criterion':['squared_error', 'friedman_mse'],
+                    # 'max_features':['auto','sqrt','log2'],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "liner_regressor":{
+                    "fit_intercept": [True, False],
+                    "positive": [True, False],
+                    "copy_X": [True, False],
+                    "n_jobs": [-1, 1, 2, 4]
+                },
+                "xgboost_regressor":{
+                    'learning_rate':[.1,.01,.05,.001],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "catboost_regressor":{
+                    'depth': [6,8,10],
+                    'learning_rate': [0.01, 0.05, 0.1],
+                    'iterations': [30, 50, 100]
+                },
+                "adaboost_regressor":{
+                    'learning_rate':[.1,.01,0.5,.001],
+                    # 'loss':['linear','square','exponential'],
+                    'n_estimators': [8,16,32,64,128,256]
+                },
+                "knn_regressor" : {
+                    "n_neighbors": [1, 3, 5, 7, 9]
+                # "weights": ["uniform", "distance", "inverse distance"],
+                # "metric": ["minkowski", "manhattan", "chebyshev"],
+                # "algorithm": ["auto", "kd_tree", "ball_tree"]
+                }
+            }       
+
+            lg.info('Hyperparameter tuning initiated')
             lg.info('Initiating model trainer and model evaluation')
-            model_report: dict = evaluate_model(X_train, y_train, X_test, y_test, models)
+            model_report: dict = evaluate_model(X_train, y_train, X_test, y_test, models, params)
+            lg.info('Hyperparameter tuning completed')
             lg.info('Model training and evaluation completed')
 
             best_model_score = max(sorted(model_report.values()))
