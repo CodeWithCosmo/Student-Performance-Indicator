@@ -2,10 +2,10 @@
 # seaborn
 pandas
 numpy
-catboost
-xgboost
+# catboost
+# xgboost
 dill
-scikit-learn
+# scikit-learn
 flask
 gunicorn
 
