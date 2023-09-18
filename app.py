@@ -2,15 +2,15 @@ import pickle
 import sys
 from flask import Flask, request,render_template
 
-import numpy as np
-import pandas as pd
+# import numpy as np
+# import pandas as pd
 
 
 from src.logger import logging as lg
 from src.exception import CustomException
 from src.pipeline.predict_pipeline import PredictionPipeline,CustomData
 
-from sklearn.preprocessing import StandardScaler
+# from sklearn.preprocessing import StandardScaler
 
 application = Flask(__name__)
 app = application
@@ -36,11 +36,11 @@ def predict():
 
             predict_pipeline = PredictionPipeline()
             results = predict_pipeline.predict(pred_df)
-            return render_template('results.html',results=results[0]) 
+            return render_template("home.html",prediction_text=f"Your Predicted Maths Score is {round(results[0],2)}") 
          
          except Exception as e:
             raise CustomException(e, sys)
 
 if __name__ == "__main__":
     lg.info('Application started')
-    app.run(debug=True)
+    app.run(host='0.0.0.0')

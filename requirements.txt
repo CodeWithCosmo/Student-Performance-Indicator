@@ -1,5 +1,7 @@
-matplotlib
-seaborn
+# matplotlib
+# seaborn
+pandas
+numpy
 catboost
 xgboost
 dill
