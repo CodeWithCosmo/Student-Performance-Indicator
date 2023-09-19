@@ -1,4 +1,3 @@
-import pickle
 import sys
 from flask import Flask, request,render_template
 
@@ -32,8 +31,6 @@ def predict():
                 writing_score = request.form.get('writing_score')              
             )
             pred_df = data.to_dataframe()
-            #  print(pred_df)
-
             predict_pipeline = PredictionPipeline()
             results = predict_pipeline.predict(pred_df)
             return render_template("home.html",prediction_text=f"Your Predicted Maths Score is {round(results[0],2)}") 
