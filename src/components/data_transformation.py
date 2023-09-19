@@ -63,8 +63,6 @@ class DataTransformation:
             preprocessor = self.get_data_transformer()
 
             target_column = ['math_score']
-            numerical_column = ['writing_score','reading_score']
-
             input_feature_train_df = train_df.drop(target_column,axis=1)
             target_feature_train_df = train_df[target_column]            
 
