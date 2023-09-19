@@ -48,9 +48,9 @@ class DataIngestion:
             raise CustomException(e, sys)
         
 
-if __name__ == '__main__':
-    train_data,test_data = DataIngestion().initiate_data_ingestion()
+# if __name__ == '__main__':
+#     train_data,test_data = DataIngestion().initiate_data_ingestion()
     
-    train_ar,test_ar,_ = DataTransformation().initiate_data_transformation(train_data,test_data)
+#     train_ar,test_ar,_ = DataTransformation().initiate_data_transformation(train_data,test_data)
 
-    print(ModelTrainer().initiate_model_trainer(train_ar,test_ar))
+#     print(ModelTrainer().initiate_model_trainer(train_ar,test_ar))
