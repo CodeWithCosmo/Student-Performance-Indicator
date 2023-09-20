@@ -1,15 +1,9 @@
 import sys
 from flask import Flask, request,render_template
 
-# import numpy as np
-# import pandas as pd
-
-
 from src.logger import logging as lg
 from src.exception import CustomException
 from src.pipeline.predict_pipeline import PredictionPipeline,CustomData
-
-# from sklearn.preprocessing import StandardScaler
 
 application = Flask(__name__)
 app = application
@@ -38,6 +32,6 @@ def predict():
          except Exception as e:
             raise CustomException(e, sys)
 
-if __name__ == "__main__":
-    lg.info('Application started')
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     lg.info('Application started')
+#     app.run(debug=True)
