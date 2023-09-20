@@ -1,4 +1,4 @@
-# **`Student Perfomance Indicator`**
+# **`Student Exam Perfomance Project`**
 ## The Student Performance Indicator project is a comprehensive system designed to analyze and assess student performance within an educational institution. It aims to provide valuable insights into students' academic progress and offer data-driven recommendations for both students and educators. This project is developed to enhance the overall learning experience and promote academic excellence.
 
 > ## Try it out at [Student Performance Indicator](https://studentperfometer.onrender.com)
