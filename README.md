@@ -1,6 +1,9 @@
 # **`Student Exam Perfomance Project`**
 ## The Student Performance Indicator project is a comprehensive system designed to analyze and assess student performance within an educational institution. It aims to provide valuable insights into students' academic progress and offer data-driven recommendations for both students and educators. This project is developed to enhance the overall learning experience and promote academic excellence.
 
+<img src ="https://cdn.edvoy.com/article/606320d0c5d11d0a61f1c1c3/banner/The-ultimate-list-of-entrance-exams-to-study-abroad_banner.jpg" width = 1000 height = 400>
+
+
 > ## Try it out at [Student Performance Indicator](https://studentperfometer.onrender.com)
 
 * ## Applications Used
